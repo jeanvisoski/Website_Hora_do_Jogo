@@ -1,6 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+
+// import Nav from './components/Nav';
+
+// ReactDOM.render(
+//     <Nav />,
+//     document.getElementById('nav')
+// );
 
