@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Login from '';
+import Login from '../login/Login';
 
-class Website extends Component {
-  render() {
-    return (
-      <Login />
-    );
-  }
-}
+const Admin = () => (
+  <Login />
+)
 
-export default Website;
+export default Admin;
