@@ -1,6 +1,19 @@
-import React from "react";
+import React, { Component } from 'react';
 
-ReactDOM.render(
-    <App />, 
-document.getElementById('root'));
+import { Link } from 'react-router-dom'
 
+class Website extends Component {
+  render() {
+    return (
+      <body>
+        <header className="App-header">
+        
+          <h1 className="App-title">Welcome to React admin</h1>
+        </header>
+       
+      </body>
+    );
+  }
+}
+
+export default Website;
