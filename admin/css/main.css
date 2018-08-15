@@ -4,3 +4,6 @@
 .displayFlex{
     display: flex;
 }
+.nav-item{
+    cursor: pointer;
+}
