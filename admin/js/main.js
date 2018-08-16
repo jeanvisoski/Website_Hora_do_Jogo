@@ -1,8 +1,8 @@
 $(function () {
     $('#dashboardLink').click(function (i) {
-        $('#calendar').removeClass('displayFlex');
+        $('.calendar').removeClass('displayFlex');
         $('#calendarLink').removeClass('active');
-        $('#calendar').addClass('displayNone');
+        $('.calendar').addClass('displayNone');
         $('#dashboard').removeClass('displayNone');
         $('#dashboard').addClass('displayFlex');
         $('#dashboardLink').addClass('active');
@@ -15,7 +15,7 @@ $(function () {
         $('#dashboard').removeClass('displayFlex');
         $('#dashboardLink').removeClass('active');
         $('#dashboard').addClass('displayNone');
-        $('#calendar').removeClass('displayNone');
+        $('.calendar').removeClass('displayNone');
         $('#calendarLink').addClass('active');
 
     });

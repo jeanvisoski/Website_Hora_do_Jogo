@@ -24,7 +24,7 @@
   <link href="css/sb-admin.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <link href="css/calendar.css" rel="stylesheet">
-  
+
 </head>
 
 <body id="page-top">
@@ -40,14 +40,49 @@
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-              <i class="fas fa-search"></i>
-            </button>
+        <div class="displayNone calendar ">
+          <button id="newGameBotton" type="button" class="btn btn-success p-2 bd-highlight" data-toggle="modal" data-target="#newGame">Novo Jogo</button>
         </div>
       </div>
     </form>
+
+    <!-- Modal New Game -->
+    <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Novo jogo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <div class="col-10">
+                  <label for="example-time-input" class="col-2 col-form-label">Nome</label>
+                  <input type="text" class="form-control" placeholder="Nome">
+                </div>
+                <br>
+                <div class="col-10">
+                  <label for="example-time-input" class="col-2 col-form-label">Data</label>
+                  <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                </div>
+                <br>
+                <label for="example-time-input" class="col-2 col-form-label">Horário</label>
+                <div class="col-10">
+                  <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -145,56 +180,147 @@
       </div>
 
       <!--Agenda-->
-      
+      <div class="calendar displayNone">
+        <table id="calendarTable" class="table">
+
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Nome</th>
+              <th>Status</th>
+              
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <button id="editGameBotton" type="button" class="fa fa-edit btn btn-warning" data-toggle="modal" data-target="#editGame"></button>
+                <button class="fa fa-trash-alt btn btn-danger"></button>
+
+              </td>
+              <td>10/08/2018</td>
+              <td>14:00</td>
+              <td>Zorita Serrano</td>
+              <td class="fa fa-check">Confirmado</td>
+
+            </tr>
+            <tr>
+              <td>
+                <button id="editGameBotton" type="button" class="fa fa-edit btn btn-warning" data-toggle="modal" data-target="#editGame"></button>
+                <button class="fa fa-trash-alt btn btn-danger"></button>
+
+              </td>
+              <td>10/08/2018</td>
+              <td>15:00</td>
+              <td>jean Visoski</td>
+              <td class="fa fa-exclamation-triangle">Pendente</td>
+            </tr>
+            <tr>
+              <td>
+                <button id="editGameBotton" type="button" class="fa fa-edit btn btn-warning" data-toggle="modal" data-target="#editGame"></button>
+                <button class="fa fa-trash-alt btn btn-danger"></button>
+
+              </td>
+              <td>11/08/2018</td>
+              <td>14:00</td>
+              <td>joao Serrano</td>
+              <td class="fa fa-ban">Cancelado</td>
+            </tr>
 
 
-        <!--Agenda-->
+          </tbody>
 
+        </table>
+      </div>
+      <!--Agenda-->
 
-
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright © Hora do jogo</span>
+      <!-- Modal edit Game -->
+      <div class="modal fade" id="editGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar jogo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <div class="col-10">
+                    <label for="example-time-input" class="col-2 col-form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome">
+                  </div>
+                  <br>
+                  <div class="col-10">
+                    <label for="example-time-input" class="col-2 col-form-label">Data</label>
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                  </div>
+                  <br>
+                  <label for="example-time-input" class="col-2 col-form-label">Horário</label>
+                  <div class="col-10">
+                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary">Salvar</button>
             </div>
           </div>
-        </footer>
-
+        </div>
       </div>
-      <!-- /.content-wrapper -->
+
+
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Hora do jogo</span>
+          </div>
+        </div>
+      </footer>
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /.content-wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
 
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script type="text/javascript" src="../js/route.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script type="text/javascript" src="../js/route.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
 </body>
 
 </html>
